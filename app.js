@@ -10,7 +10,8 @@
     pomodoroApp.controller("ClockCtrl", ["$scope", "$interval", function($scope, $interval) {
         var intervalPromise = null;
         $scope.isTicking = false;
-        $scope.timeLeft = defaultSessionTime;
+        $scope.timeLeft = defaultSessionTime*60*1000;
+        $scope.clockSessionTime = defaultSessionTime;
         $scope.onOffButtonText = "Start";
 
         $scope.clockOnOff = function() {
@@ -36,7 +37,7 @@
             if($scope.isTicking)
                 return;
 
-            $scope.timeLeft = defaultSessionTime;
+            $scope.timeLeft = $scope.clockSessionTime*60*1000;
         };
     }]);
 })();

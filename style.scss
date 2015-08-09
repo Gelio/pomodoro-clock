@@ -2,3 +2,19 @@
 	overflow: auto;
 	margin-bottom: 10px;
 }
+
+.clock-timer {
+  font-size: 2em;
+  margin: 10px 0;
+  padding: 10px 0;
+  background-color: #496887;
+  color: white;
+}
+
+.clock-settings {
+  margin-top: 10px;
+
+  .js-clock-session-length {
+    width: 30px;
+  }
+}

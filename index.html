@@ -17,14 +17,19 @@
     <h2>Created by <a href="http://voreny.bitbucket.org/">Voreny</a></h2>
 </header>
 
-<section class="container text-center" ng-controller="ClockCtrl">
-    <span class="clock-timer">
+<section class="text-center" ng-controller="ClockCtrl">
+    <div class="clock-timer">
         {{timeLeft | date: "mm:ss"}}
-    </span>
-    {{isTicking}}
+    </div>
 
     <button role="button" class="btn btn-primary js-clock-on-off-button" ng-click="clockOnOff()">{{onOffButtonText}}</button>
     <button role="button" class="btn btn-default js-clock-reset-button" ng-click="clockReset()">Reset</button>
+
+    <div class="row clock-settings">
+        <label for="clockSessionLength">
+            Session length: <input type="number" name="sessionLength" id="clockSessionLength" class="js-clock-session-length" min="0" size="3" ng-model="clockSessionTime">
+        </label>
+    </div>
 </section>
 
 
