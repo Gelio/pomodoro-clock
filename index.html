@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html lang="en">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,18 +8,27 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
+
+    <link rel="stylesheet" href="style.css">
 </head>
 <body ng-app="pomodoroApp">
-<header>
+<header class="pomodoro-clock-header text-center">
     <h1>Pomodoro Clock</h1>
     <h2>Created by <a href="http://voreny.bitbucket.org/">Voreny</a></h2>
 </header>
 
-<section class="container">
+<section class="container text-center" ng-controller="ClockCtrl">
+    <span class="clock-timer">
+        {{timeLeft | date: "mm:ss"}}
+    </span>
+    {{isTicking}}
 
+    <button role="button" class="btn btn-primary js-clock-on-off-button" ng-click="clockOnOff()">{{onOffButtonText}}</button>
+    <button role="button" class="btn btn-default js-clock-reset-button" ng-click="clockReset()">Reset</button>
 </section>
 
 
+<script src="config.js"></script>
 <script src="app.js"></script>
 </body>
 </html>
