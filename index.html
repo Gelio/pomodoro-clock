@@ -18,7 +18,7 @@
 </header>
 
 <section class="text-center pomodoro-clock-body" ng-controller="ClockCtrl">
-    <div class="clock-timer">
+    <div class="clock-timer" ng-class="{'clock-break-enabled': isBreak}">
         {{timeLeft | date: "mm:ss"}}
     </div>
 

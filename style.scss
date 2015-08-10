@@ -8,11 +8,16 @@
 }
 
 .clock-timer {
+  transition: background-color linear 1s;
   font-size: 3em;
   margin: 10px 0;
   padding: 10px 0;
   background-color: #496887;
   color: white;
+
+  &.clock-break-enabled {
+    background-color: #06870e;
+  }
 }
 
 .clock-settings {
