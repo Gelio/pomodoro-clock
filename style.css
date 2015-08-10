@@ -1,3 +1,6 @@
+.pomodoro-clock-header, .pomodoro-clock-body {
+  width: 100%; }
+
 .pomodoro-clock-header {
   overflow: auto;
   margin-bottom: 10px; }
@@ -11,5 +14,5 @@
 
 .clock-settings {
   margin-top: 10px; }
-  .clock-settings .js-clock-session-length {
-    width: 30px; }
+  .clock-settings .js-clock-session-length, .clock-settings .js-clock-break-length {
+    width: 50px; }

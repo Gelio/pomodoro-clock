@@ -1,6 +1,10 @@
+.pomodoro-clock-header, .pomodoro-clock-body {
+  width: 100%;
+}
+
 .pomodoro-clock-header {
-	overflow: auto;
-	margin-bottom: 10px;
+  overflow: auto;
+  margin-bottom: 10px;
 }
 
 .clock-timer {
@@ -14,7 +18,7 @@
 .clock-settings {
   margin-top: 10px;
 
-  .js-clock-session-length {
-    width: 30px;
+  .js-clock-session-length, .js-clock-break-length {
+    width: 50px;
   }
 }

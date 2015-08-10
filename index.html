@@ -17,18 +17,28 @@
     <h2>Created by <a href="http://voreny.bitbucket.org/">Voreny</a></h2>
 </header>
 
-<section class="text-center" ng-controller="ClockCtrl">
+<section class="text-center pomodoro-clock-body" ng-controller="ClockCtrl">
     <div class="clock-timer">
         {{timeLeft | date: "mm:ss"}}
     </div>
 
-    <button role="button" class="btn btn-primary js-clock-on-off-button" ng-click="clockOnOff()">{{onOffButtonText}}</button>
-    <button role="button" class="btn btn-default js-clock-reset-button" ng-click="clockReset()">Reset</button>
+    <div class="clock-buttons">
+        <button role="button" class="btn btn-primary js-clock-on-off-button" ng-click="clockOnOff()">{{onOffButtonText}}</button>
+        <button role="button" class="btn btn-default js-clock-reset-button" ng-click="clockReset()">Reset</button>
+    </div>
 
-    <div class="row clock-settings">
-        <label for="clockSessionLength">
-            Session length: <input type="number" name="sessionLength" id="clockSessionLength" class="js-clock-session-length" min="0" size="3" ng-model="clockSessionTime">
-        </label>
+    <div class="clock-settings">
+        <form>
+            <div>
+                <label for="clockSessionLength">Session length:</label>
+                <input type="number" name="sessionLength" id="clockSessionLength" class="js-clock-session-length" min="0" ng-model="clockSessionTime">
+            </div>
+
+            <div>
+                <label for="clockBreakLength">Break length:</label>
+                <input type="number" name="breakLength" id="clockBreakLength" class="js-clock-break-length" min="0" ng-model="clockBreakTime">
+            </div>
+        </form>
     </div>
 </section>
 
