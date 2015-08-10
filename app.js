@@ -13,6 +13,8 @@
         onOffButton.attr("disabled", disabled);
     }
 
+    var alarmSound = new Audio("resources/Alarm-clock-sound-short.mp3");
+
     pomodoroApp.controller("ClockCtrl", ["$scope", "$interval", function($scope, $interval) {
         var intervalPromise = null;
         $scope.isTicking = false;
@@ -21,6 +23,7 @@
         $scope.clockBreakTime = defaultBreakTime;
         $scope.onOffButtonText = "Start";
         $scope.isBreak = false;
+        $scope.soundsEnabled = true;
 
         $scope.clockOnOff = function() {
             $scope.isTicking = !$scope.isTicking;
@@ -37,6 +40,9 @@
 
                     if($scope.timeLeft <= 0)
                     {
+                        if($scope.soundsEnabled)
+                            alarmSound.play();
+
                         if($scope.isBreak)
                         {
                             $scope.isTicking = false;
@@ -44,7 +50,7 @@
                             $scope.onOffButtonText = "Start";
                             updateResetButton(false);
                             updateOnOffButton(false);
-                            $scope.isBreak = !$scope.isBreak;
+                            $scope.isBreak = false;
 
                             $interval.cancel(intervalPromise);
                         }
@@ -54,8 +60,7 @@
                             $scope.onOffButtonText = "Start";
                             updateResetButton(true);
                             updateOnOffButton(true);
-                            $scope.isBreak = !$scope.isBreak;
-
+                            $scope.isBreak = true;
                         }
                     }
                 }, 1000);

@@ -23,8 +23,8 @@
     </div>
 
     <div class="clock-buttons">
-        <button role="button" class="btn btn-primary js-clock-on-off-button" ng-click="clockOnOff()">{{onOffButtonText}}</button>
-        <button role="button" class="btn btn-default js-clock-reset-button" ng-click="clockReset()">Reset</button>
+        <button role="button" class="btn btn-primary btn-lg js-clock-on-off-button" ng-click="clockOnOff()">{{onOffButtonText}}</button>
+        <button role="button" class="btn btn-default btn-lg js-clock-reset-button" ng-click="clockReset()">Reset</button>
     </div>
 
     <div class="clock-settings">
@@ -37,6 +37,11 @@
             <div>
                 <label for="clockBreakLength">Break length:</label>
                 <input type="number" name="breakLength" id="clockBreakLength" class="js-clock-break-length" min="0" ng-model="clockBreakTime">
+            </div>
+
+            <div>
+                <input type="checkbox" name="enableSounds" id="clockEnableSounds" class="js-clock-enable-sounds" ng-model="soundsEnabled">
+                <label for="clockEnableSounds">Sound enabled</label>
             </div>
         </form>
     </div>
