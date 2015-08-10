@@ -20,5 +20,33 @@
 
   .js-clock-session-length, .js-clock-break-length {
     width: 50px;
+
+    @media screen and (min-width: 1280px)
+    {
+      width: 80px;
+    }
+  }
+}
+
+@media screen and (min-width: 1280px)
+{
+  body {
+    font-size: 3em;
+  }
+
+  h1 {
+    font-size: 4em;
+  }
+
+  h2 {
+    font-size: 3.5em;
+  }
+
+  input[type=checkbox]
+  {
+    -ms-transform: scale(2); /* IE */
+    -moz-transform: scale(2); /* FF */
+    -webkit-transform: scale(2); /* Safari and Chrome */
+    -o-transform: scale(2); /* Opera */
   }
 }
